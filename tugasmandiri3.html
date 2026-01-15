@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA NAMA SISWA RPL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #add8e6;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1> Data Nama Siswa RPL </h1>
+    <h2> SMK Negeri 4 Malang </h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th> NIS </th>
+            <th>Nama Siswa</th>
+            <th>Kelas</th>
+        </tr>
+        <tbody id="tabelData">
+        </tbody>
+    </table>
+    <script>
+        let siswa = [
+            { nis: "1001", nama: "Andi", kelas: "X RPL A" },
+            { nis: "1002", nama: "Budi", kelas: "X RPL B" },
+            { nis: "1003", nama: "Citra", kelas: "X RPL C" },
+            { nis: "1004", nama: "Dewi", kelas: "XI RPL A" },
+        ];
+
+        document.getElementById("tabelData").innerHTML = siswa.map(function(s, index) {
+            return "<tr>" +
+                   "<td>" + (index + 1) + "</td>" +
+                   "<td>" + s.nis + "</td>" +
+                   "<td>" + s.nama + "</td>" +
+                   "<td>" + s.kelas + "</td>" +
+                   "</tr>";
+        }).join("");
+    </script>
+</body>
+</html>
